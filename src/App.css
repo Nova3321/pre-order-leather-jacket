@@ -1,0 +1,270 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff; /* White bg */
+  color: #000000; /* Black text */
+}
+
+.ephesis-regular {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('./assets/woman-leather-jacket.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Ensure full width */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Inherit the background image */
+  filter: blur(5px); /* Blur only the background */
+  z-index: 0; /* Behind content */
+}
+
+.shop-name, .hero-content, .animation-container, .countdown {
+  position: relative;
+  z-index: 1; /* Ensure content is above blurred background */
+  color: #000000; /* Black text */
+}
+
+.shop-name {
+  font-size: 4rem; /* Enlarged from 3.5rem */
+  margin: 30px 0; /* Increased margin for spacing */
+  color: #000000; /* Black text */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  position: absolute;
+  top: 20px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  width: 100%; /* Full width for centering */
+}
+
+.animation-container {
+  margin: 25px auto; /* Increased margin for spacing */
+  display: flex;
+  justify-content: center;
+}
+
+.countdown {
+  font-size: 2rem;
+  margin: 25px auto; /* Increased margin for spacing */
+  background-color: #bfbfbf; /* Palette */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Allows auto centering */
+  color: #000000; /* Black text */
+}
+
+/* Form section */
+.form-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"] {
+  appearance: none; /* Hide default radio */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000; /* Black border */
+  border-radius: 50%;
+  background-color: #ffffff; /* White default */
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: #000000; /* Black when selected */
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #7f7f7f; /* Palette focus */
+}
+
+.sizes label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #000000; /* Black text */
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #7f7f7f; /* Palette */
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center; /* Center sizes */
+}
+
+.colors {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Center colors */
+}
+
+.color-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #7f7f7f; /* Palette */
+}
+
+.color-icon.selected {
+  border-color: #000000;
+}
+
+button {
+  padding: 10px;
+  background-color: #404040; /* Palette */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin: 0 auto; /* Center button */
+}
+
+button:hover {
+  background-color: #7f7f7f; /* Palette hover */
+}
+
+/* Responsive design - Desktop/Large screens */
+@media (min-width: 1025px) {
+  .shop-name {
+    font-size: 5rem; /* Further enlarged on desktop */
+  }
+
+  .animation-container .animation {
+    width: 300px !important; /* Enlarged animation */
+    height: 300px !important; /* Enlarged animation */
+  }
+
+  .countdown {
+    font-size: 2.5rem;
+  }
+
+  form {
+    max-width: 600px; /* Wider form on desktop */
+  }
+}
+
+/* Tablet/Medium screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shop-name {
+    font-size: 4.5rem;
+  }
+
+  .animation-container .animation {
+    width: 275px !important; /* Enlarged animation */
+    height: 275px !important; /* Enlarged animation */
+  }
+
+  .countdown {
+    font-size: 2.2rem;
+  }
+
+  form {
+    max-width: 500px;
+  }
+}
+
+/* Mobile/Small screens */
+@media (max-width: 768px) {
+  .hero {
+    padding: 10px;
+  }
+
+  .shop-name {
+    font-size: 3rem; /* Enlarged from 2.5rem */
+    top: 10px;
+  }
+
+  .animation-container .animation {
+    width: 200px !important; /* Enlarged from 150px */
+    height: 200px !important; /* Enlarged from 150px */
+  }
+
+.countdown {
+  font-size: 1.2rem; /* Réduit depuis 2rem */
+  margin: 20px auto;
+  background-color: #bfbfbf; 
+  padding: 15px; /* Un peu plus petit */
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  color: #000000;
+}
+
+  .animation-container {
+    width: 100%;
+    max-width: 200px; /* Enlarged */
+    margin: 10px auto;
+  }
+
+  form {
+    padding: 20px;
+    max-width: 90%; /* Fit mobile */
+  }
+
+  .sizes {
+    flex-direction: column; /* Stack sizes on mobile */
+    align-items: center;
+  }
+
+  .colors {
+    justify-content: center;
+  }
+}
