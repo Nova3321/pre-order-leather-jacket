@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import welcomeAnimation from './assets/Welcome.json';
+import welcomeAnimation from './assets/welcome.json';
 import scrollDownAnimation from './assets/scroll-down.json';
 import Countdown from './Countdown';
 import Navbar from './Navbar';
